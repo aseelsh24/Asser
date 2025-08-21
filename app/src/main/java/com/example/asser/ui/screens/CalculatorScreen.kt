@@ -7,6 +7,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
+import androidx.compose.material3.SelectableDates
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -46,11 +47,15 @@ fun CalculatorScreen(
             }
         ) {
             val datePickerState = rememberDatePickerState(
-                initialSelectedDateMillis = uiState.birthDate.atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli()
+                initialSelectedDateMillis = uiState.birthDate.atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli(),
+                selectableDates = object : SelectableDates {
+                    override fun isSelectableDate(utcTimeMillis: Long): Boolean {
+                        return utcTimeMillis <= Instant.now().toEpochMilli()
+                    }
+                }
             )
             DatePicker(
-                state = datePickerState,
-                dateValidator = { it <= Instant.now().toEpochMilli() }
+                state = datePickerState
             )
             LaunchedEffect(datePickerState.selectedDateMillis) {
                 datePickerState.selectedDateMillis?.let {
