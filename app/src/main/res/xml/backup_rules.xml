@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!--
+   In order to enable auto-backup, this file must be present in the app's
+   manifest file as the value of the android:fullBackupContent attribute.
+
+   This file is a good place to specify which files/directories should be
+   included or excluded from the backup. For more information, see:
+   https://developer.android.com/guide/topics/data/autobackup
+-->
+</full-backup-content>

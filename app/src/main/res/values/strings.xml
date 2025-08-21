@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Asser</string>
+    <string name="age_calculator">Age Calculator</string>
+    <string name="history">History</string>
+    <string name="birth_date">Birth Date</string>
+    <string name="select_date">Select Date</string>
+    <string name="today">Today</string>
+    <string name="custom_date">Custom Date</string>
+    <string name="calculate_age_until">Calculate age until:</string>
+    <string name="calculate">Calculate</string>
+    <string name="age">Age</string>
+    <string name="years">Years</string>
+    <string name="months">Months</string>
+    <string name="days">Days</string>
+    <string name="hours">Hours</string>
+    <string name="result">Result</string>
+    <string name="share_result">Share Result</string>
+    <string name="birthday_countdown">Birthday Countdown</string>
+    <string name="days_left_for_next_birthday">Days left for next birthday</string>
+    <string name="no_history">No history yet</string>
+    <string name="calculation_history">Calculation History</string>
+    <string name="share_age_subject">My Age Calculation</string>
+    <string name="share_age_text">Hi, I calculated my age using Asser app. My age is %1$s years, %2$s months, %3$s days, and %4$s hours.</string>
+</resources>
