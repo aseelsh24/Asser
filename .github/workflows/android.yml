@@ -30,8 +30,11 @@ jobs:
     - name: Build Release APK
       run: ./gradlew assembleRelease
 
+    - name: Rename APK for upload
+      run: mv app/build/outputs/apk/release/app-release-unsigned.apk app/build/outputs/apk/release/app-release.apk
+
     - name: Upload Release APK
       uses: actions/upload-artifact@v4
       with:
-        name: asser-release-apk
-        path: app/build/outputs/apk/release/app-release-unsigned.apk
+        name: asser-release-signed-apk
+        path: app/build/outputs/apk/release/app-release.apk
