@@ -82,7 +82,7 @@ class CalculatorViewModelTest {
 
         // Then the countdown should be calculated
         val countdown = viewModel.uiState.value.birthdayCountdown
-        assert(countdown != null)
-        assert(countdown > 0)
+        org.junit.Assert.assertNotNull("Birthday countdown should not be null", countdown)
+        org.junit.Assert.assertTrue("Birthday countdown should be positive", countdown!! > 0)
     }
 }
