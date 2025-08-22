@@ -7,6 +7,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.emptyFlow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.StandardTestDispatcher
 import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.runTest
@@ -58,7 +59,7 @@ class CalculatorViewModelTest {
         viewModel.calculateAge()
 
         // Then the age should be calculated correctly
-        val result = viewModel.uiState.value.calculationResult
+        val result = viewModel.uiState.first { it.calculationResult != null }.calculationResult
         assertEquals(23, result?.years)
         assertEquals(4, result?.months)
         assertEquals(19, result?.days)
@@ -81,7 +82,7 @@ class CalculatorViewModelTest {
         viewModel.calculateAge()
 
         // Then the countdown should be calculated
-        val countdown = viewModel.uiState.value.birthdayCountdown
+        val countdown = viewModel.uiState.first { it.birthdayCountdown != null }.birthdayCountdown
         org.junit.Assert.assertNotNull("Birthday countdown should not be null", countdown)
         org.junit.Assert.assertTrue("Birthday countdown should be positive", countdown!! > 0)
     }
