@@ -20,5 +20,5 @@
     <string name="no_history">No history yet</string>
     <string name="calculation_history">Calculation History</string>
     <string name="share_age_subject">My Age Calculation</string>
-    <string name="share_age_text">Hi, I calculated my age using Asser app. My age is %1$s years, %2$s months, %3$s days, and %4$s hours.</string>
+    <string name="share_age_text">Hi, I calculated my age using Asser app. My age is %1$d years, %2$d months, %3$d days, and %4$d hours.</string>
 </resources>
