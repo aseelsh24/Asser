@@ -39,8 +39,11 @@ jobs:
     - name: Build Signed Release APK
       run: ./gradlew assembleRelease
 
+    - name: List generated APK files
+      run: find app/build/outputs -name "*.apk" -type f
+
     - name: Upload Signed Release APK
       uses: actions/upload-artifact@v4
       with:
         name: asser-release-signed-apk
-        path: app/build/outputs/apk/release/app-release.apk
+        path: app/build/outputs/apk/**/*.apk
